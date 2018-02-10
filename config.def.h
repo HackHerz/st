@@ -82,25 +82,33 @@ static char termname[] = "st-256color";
  */
 static unsigned int tabspaces = 8;
 
+/* bg opacity */
+static const int alpha = 0xcd;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* solarized dark */
-	"#073642",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#eee8d5",  /*  7: white    */
-	"#002b36",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#586e75",  /* 10: brgreen  */
-	"#657b83",  /* 11: bryellow */
-	"#839496",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#93a1a1",  /* 14: brcyan   */
-	"#fdf6e3",  /* 15: brwhite  */
+    "#0c0d0e",  /*   0: black    */
+    "#e31a1c",  /*   1: red      */
+    "#31a354",  /*   2: green    */
+    "#dca060",  /*   3: yellow   */
+    "#3182bd",  /*   4: blue     */
+    "#756bb1",  /*   5: magenta  */
+    "#80b1d3",  /*   6: cyan     */
+    "#b7b8b9",  /*   7: white    */
+    "#737475",  /*   8: brblack  */
+    "#e31a1c",  /*   9: brred    */
+    "#31a354",  /*  10: brgreen  */
+    "#dca060",  /*  11: bryellow */
+    "#3182bd",  /*  12: brblue   */
+    "#756bb1",  /*  13: brmagenta*/
+    "#80b1d3",  /*  14: brcyan   */
+    "#fcfdfe",  /*  15: brwhite  */
+
+  /* special colors */
+  [256] = "#0c0d0e", /* background */
+  [257] = "#b7b8b9", /* foreground */
+
 };
 
 /* Terminal colors for alternate (light) palette */
@@ -122,15 +130,21 @@ static const char *altcolorname[] = {
 	"#6c71c4",  /* 13: brmagenta*/
 	"#586e75",  /* 14: brcyan   */
 	"#002b36",  /* 15: brwhite  */
+
+
+  /* special colors */
+  [256] = "#fcfdfe", /* background */
+  [257] = "#515253", /* foreground */
+
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-static unsigned int defaultfg = 12;
-static unsigned int defaultbg = 8;
-static unsigned int defaultcs = 14;
+static unsigned int defaultfg = 257;
+static unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 15;
 
 /*
