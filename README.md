@@ -1,6 +1,3 @@
-https://st.suckless.org/
-st is a simple terminal implementation for X.
-
 Forked from https://github.com/LukeSmithxyz/st
 
 Same config just already patched with different tranparency & different color scheme.
